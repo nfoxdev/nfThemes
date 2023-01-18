@@ -1,13 +1,16 @@
-# nf-themes
+# nfThemes
 
-Set your favourite VisualFoxpro colors,
-save and restore as .vfpThemes files.
-Use Click to change Forecolor / Right Click= BackgroundColor
-Open your editor / debugger to see changes in real time.
+Set your favourite VisualFoxpro colors in real time.
 
-Hint:
-Use Save button to save your current colors before doing any change;
+Just select desired area ( hint: start with EditorNormalColor )
+and use mouse click to change Forecolor / Right Click to set 
+BackgroundColor ( changes are set inmediately to registry );
+
+Use Save Theme / Load Theme to save or restore color themes 
+from .vfptheme files.
 
 Supplied themes:
--nFox.vfpTheme
--default.vfpTheme
+
+- nFox.vfpTheme 
+- default.vfpTheme
+
