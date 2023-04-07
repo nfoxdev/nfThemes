@@ -6,6 +6,8 @@
 #Define crlf Chr(13)+Chr(10)
 #Define themeextension 'vfptheme'
 
+Set Path To (Justpath(Sys(16))) Additive
+
 _Screen.AddProperty('nfthemes',Createobject('nfThemes'))
 
 
@@ -25,6 +27,7 @@ Define Class nfthemes As Form
 	BackColor 	= Rgb(100,100,100)
 	ShowTips	= .T.
 	foxreg = .F.
+	oldinireg = .F.
 
 	Add Object savetheme As CommandButton With Caption='Save Theme',Visible = .T.,Top=4,Left=10,Height=20,Width=150
 	Add Object loadtheme As CommandButton With Caption='Load Theme',Visible = .T.,Top=4,Left=190,Height=20,Width=150
@@ -57,7 +60,9 @@ BookmarkColor,ShortcutColor
 	AddProperty(This,'colorKeys(1)',.Null.)
 	Alines(This.colorkeys,m.colorscsv,1,',')
 
-	This.foxreg = Newobject('foxreg',Sys(2004)+'samples\classes\registry.prg')
+
+	This.foxreg		= Newobject('foxreg','registry.prg')
+	This.oldinireg	= Newobject('oldinireg','registry.prg')
 
 	This.pf.PageCount = Alines(atabnames,'Editor,Trace,Locals,Watch,Output,Callstack,Bookmark,Shortcut',1,',')
 
@@ -138,11 +143,9 @@ BookmarkColor,ShortcutColor
 
 	If File(m.cfile)
 
-		oldinireg = Newobject('oldinireg',Sys(2004)+'samples\classes\registry.prg')
-
 		For Each colorkey In Thisform.colorkeys
 			Value = ''
-			oldinireg.getinientry(@m.value,'vfp9colors',m.colorkey,m.cfile)
+			Thisform.oldinireg.getinientry(@m.value,'vfp9colors',m.colorkey,m.cfile)
 			Thisform.foxreg.setfoxoption(m.colorkey,m.value)
 		Endfor
 
