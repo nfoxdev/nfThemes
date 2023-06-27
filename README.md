@@ -2,6 +2,10 @@
 
 Set your favorite colors for VisualFoxpro in real time.
 
+![image](https://github.com/nfoxdev/nfThemes/assets/11223247/4fce41b2-f18a-4eb8-bb1d-72ef4aa7d4df)
+
+
+
 Just select desired area ( hint: start with EditorNormalColor )\
 use mouse click to change Forecolor / Right Click to set BackgroundColor \
 (changes are saved inmediately to registry)
