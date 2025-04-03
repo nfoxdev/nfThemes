@@ -23,7 +23,7 @@ Define Class nfthemes As Form
 	AlwaysOnTop	= .T.
 	Width		= 350
 	Height		= 450+40
-	Caption 	= 'nfTools - ( Click=FontColor RightClick=BackColor )'
+	Caption 	= 'nfThemes - ( Click=FontColor RightClick=BackColor )'
 	BackColor 	= Rgb(100,100,100)
 	ShowTips	= .T.
 	foxreg = .F.
@@ -209,7 +209,7 @@ Define Class colorlbl As Label
 *-------------------------------------
 	Local regval
 	regval = ''
-	Thisform.foxreg.getfoxoption(This.Caption,@regval)
+	Thisform.foxreg.getfoxoption(This.Caption,@m.regval)
 
 	Local Array ac(1)
 	If Alines(ac,Strextract(m.regval,'RGB(',')',1,1),1,',') # 6
